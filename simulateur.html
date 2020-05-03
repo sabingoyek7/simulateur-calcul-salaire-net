@@ -1,0 +1,88 @@
+<!--
+* @author Kimba SABI N'GOYE
+* @version v1
+* @created on: 03/05/2020
+* @last modified: 03/05/2020 23:30
+* @link https://github.com/sabingoyek7/simulateur-calcul-salaire-net
+*
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur salaire</title>
+    <link rel="stylesheet" href="simulateur.css">
+</head>
+<body>
+    <header>
+        <h1>Plateforme de calcul du salaire net</h1>
+        <hr>
+    </header>
+    <main>
+        <section id="dataField">
+            <h2>Saisissez les informations suivantes:</h2>
+            <label for="salaireBrut">Salaire Brut:</label>
+            <input type="number" min="0" name="salaireNet" id="salaireBrut" placeholder="ex: 215000" required><br><br>
+            <label for="nbreEnfants">Nombre d'enfants:</label><select name="nbreEnfants" id="nbreEnfants" required>
+                <option value=""></option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6 ou plus</option>
+            </select><br><br>
+            <button id="submitBtn">Calculer</button>
+        </section>
+        <div id="recapField">
+            <section>
+                <h2>Récapitulatif des informations saisies</h2>
+                <div id="salaireBrutSaisi">Salaire Brut: </div>
+                <div id="nbreEnfantsSaisi">Nombre d'enfants à charge: </div>
+            </section>
+            <section>
+                <h2>Résultats</h2>
+                <div>
+                    <h3 id="salaireNetcalculer">Salaire Net:</h3>
+                </div>
+                <h2>Détails</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Taux</th>
+                        <th>Montant</th>
+                    </tr>
+                    <tr>
+                        <td>IPTS</td>
+                        <td id="tauxIPTS"></td>
+                        <td id="montantIPTS"></td>
+                    </tr>
+                    <tr>
+                        <td>Assurance employé</td>
+                        <td id="tauxAE"></td>
+                        <td id="montantAE"></td>
+                    </tr>
+                    <tr>
+                        <td>Régime de pension</td>
+                        <td id="tauxRP"></td>
+                        <td id="montantRP"></td>
+                    </tr>
+                    <tr>
+                        <td>VPS</td>
+                        <td id="tauxVPS"></td>
+                        <td id="montantVPS"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Total</th>
+                        <td id="montantTotal"></td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="simulateur.js"></script>
+</body>
+</html>
